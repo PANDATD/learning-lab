@@ -7,10 +7,10 @@ Structured Python Backend Engineering Practice
 - [x] Day 01 - Functions
 - [x] Day 02 - *args and **kwargs
 - [x] Day 03 - Decorators
+- [X] Context Managers
 
 ## Upcoming
 
-- [ ] Context Managers
 - [ ] Type Hints
 - [ ] OOP
 - [ ] REST APIs
