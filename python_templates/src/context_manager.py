@@ -36,8 +36,11 @@ class DatabaseSession:
         exc_value,
         traceback,
     ):
+        print(f"Exception: {exc_type}")
         print("Closing database connnection...")
+        return True
 
 
 with DatabaseSession() as session:
     print("Running query")
+    raise ValueError("DB Error")
