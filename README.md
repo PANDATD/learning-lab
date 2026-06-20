@@ -3,11 +3,11 @@
 
 Structured Python Backend Engineering Practice Repository
 
-This repository contains my hands-on Python backend engineering practice, notes, exercises, and mini-projects. The goal is to build strong fundamentals through daily implementation, testing, code reviews, and project-based learning.
+This repository contains my hands-on Python backend engineering practice, notes, exercises, and mini-projects. The goal is to build strong backend engineering fundamentals through implementation, testing, code reviews, and project-based learning.
 
 ---
 
-## Learning Roadmap
+## Learning Progress
 
 ### Python Fundamentals
 
@@ -20,19 +20,33 @@ This repository contains my hands-on Python backend engineering practice, notes,
 * [x] Day 07 - Dataclasses
 * [x] Day 08 - Inventory Manager Mini Project
 
-### Upcoming Topics
+---
 
-* [ ] TypedDict
-* [ ] Pytest
-* [ ] Object-Oriented Programming (OOP)
-* [ ] Pydantic BaseModel
-* [ ] REST APIs
-* [ ] FastAPI
-* [ ] SQLAlchemy
-* [ ] Alembic
-* [ ] PostgreSQL
-* [ ] Testing with SQLite
-* [ ] Production Backend Patterns
+## Notes Index
+
+| Day | Topic                  | Notes                                                                     |
+| --- | ---------------------- | ------------------------------------------------------------------------- |
+| 01  | Functions & Validation | [View Notes](python-fundamentals/notes/day01-functions-and-validation.md) |
+| 02  | *args and **kwargs     | [View Notes](python-fundamentals/notes/day02-args-and-kwargs.md)          |
+| 03  | Decorators             | [View Notes](python-fundamentals/notes/day03-decorators.md)               |
+| 04  | Context Managers       | [View Notes](python-fundamentals/notes/day04-context-managers.md)         |
+| 05  | contextlib             | [View Notes](python-fundamentals/notes/day05-contextlib.md)               |
+| 06  | Type Hints             | [View Notes](python-fundamentals/notes/day06-type-hints.md)               |
+| 07  | Dataclasses            | [View Notes](python-fundamentals/notes/day07-dataclasses.md)              |
+| 08  | Inventory Manager      | [View Notes](python-fundamentals/notes/day08-inventory-manager.md)        |
+
+---
+
+## Exercises Index
+
+| Topic                  | Exercise                     |
+| ---------------------- | ---------------------------- |
+| Functions & Validation | `pricing.py`                 |
+| Decorators             | `decorator.py`               |
+| Context Managers       | `context_manager.py`         |
+| contextlib             | `contextlib_example.py`      |
+| Dataclasses            | `understanding_dataclass.py` |
+| Inventory Manager      | `inventory.py`               |
 
 ---
 
@@ -49,83 +63,62 @@ learning-lab/
 └── README.md
 ```
 
-### Notes
-
-Contains concept notes and learning summaries.
-
-Examples:
-
-* Decorators
-* Context Managers
-* Type Hints
-* Dataclasses
-
-### Exercises
-
-Contains runnable Python examples and mini-projects.
-
-Examples:
-
-* Pricing Calculator
-* Decorator Examples
-* Context Manager Examples
-* Inventory Manager
-
 ---
 
-## Projects
+## Current Focus
 
-### Inventory Manager
+### Completed
 
-Concepts used:
-
-* Dataclasses
+* Functions
 * Validation
-* Type Hints
+* *args / **kwargs
+* Decorators
 * Context Managers
-* Exception Handling
-* asdict()
+* contextlib
+* Type Hints
+* Dataclasses
+* Mini Project Development
 
-Features:
+### Next Topics
 
-* Product creation
-* Product validation
-* Inventory value calculation
-* Product export
+* [ ] Pytest
+* [ ] TypedDict
+* [ ] Object-Oriented Programming (OOP)
+* [ ] Pydantic
+* [ ] REST APIs
+* [ ] FastAPI
+* [ ] SQLAlchemy
+* [ ] Alembic
+* [ ] PostgreSQL
 
 ---
 
 ## Learning Principles
 
 * Learn by implementation
-* Use type hints
-* Write validation first
-* Prefer returning values over printing
-* Use Git branches and Pull Requests
-* Practice code reviews
+* Write notes after every lesson
+* Build mini-projects
+* Practice Git workflows
+* Use Pull Requests
+* Review and refactor code
 * Add tests for every project
-
----
-
-## Current Focus
-
-Building strong Python backend fundamentals before moving into:
-
-* FastAPI
-* SQLAlchemy
-* PostgreSQL
-* Production-grade backend architecture
+* Focus on backend engineering fundamentals
 
 ---
 
 ## Future Improvements
 
 * Add pytest test suite
-* Add CI checks
-* Add Ruff formatting
+* Add Ruff configuration
 * Add MyPy type checking
-* Add SQLite integration
-* Add FastAPI examples
+* Add CI workflow
+* Add SQLite examples
+* Add FastAPI projects
+* Add SQLAlchemy projects
+* Add PostgreSQL integration
 
-```
-```
+---
+
+## Goal
+
+Build production-ready Python backend engineering skills through structured practice, documentation, testing, and real-world mini projects.
