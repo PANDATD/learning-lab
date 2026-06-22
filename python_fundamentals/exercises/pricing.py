@@ -28,32 +28,20 @@ def calculate_discounted_price(
         discount_percentage,
         (int, float),
     ):
-        raise TypeError(
-            "Discount percentage must be a number"
-        )
+        raise TypeError("Discount percentage must be a number")
 
     if price <= 0:
-        raise ValueError(
-            "Price must be greater than 0"
-        )
+        raise ValueError("Price must be greater than 0")
 
     if quantity <= 0:
-        raise ValueError(
-            "Quantity must be greater than 0"
-        )
+        raise ValueError("Quantity must be greater than 0")
 
     if discount_percentage < 0:
-        raise ValueError(
-            "Discount percentage cannot be negative"
-        )
+        raise ValueError("Discount percentage cannot be negative")
 
     if discount_percentage > 100:
-        raise ValueError(
-            "Discount percentage cannot exceed 100"
-        )
+        raise ValueError("Discount percentage cannot exceed 100")
 
-    discounted_price = (
-        price * (1 - discount_percentage / 100)
-    )
+    discounted_price = price * (1 - discount_percentage / 100)
 
     return float(discounted_price * quantity)

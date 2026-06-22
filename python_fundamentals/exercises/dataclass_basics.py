@@ -8,20 +8,11 @@ class Product:
     quantity: int
 
 
-
-mobile = Product(
-    name="Motorola G35",
-    price=12_000,
-    quantity=2
-)
+mobile = Product(name="Motorola G35", price=12_000, quantity=2)
 
 # Here i can access the product info using object.attribute
 
-print(
-    mobile.name,
-    mobile.price,
-    mobile.quantity
-)
+print(mobile.name, mobile.price, mobile.quantity)
 
 
 # This will prints the product object into dictitonry representation.
