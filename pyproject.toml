@@ -9,3 +9,8 @@ dependencies = [
 ]
 [tool.pytest.ini_options]
 addopts = "--import-mode=importlib"
+
+[dependency-groups]
+dev = [
+    "black>=26.5.1",
+]
