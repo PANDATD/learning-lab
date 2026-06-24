@@ -16,7 +16,7 @@ class Product:
         self.price = price
         self.quantity = quantity
 
-    def display(self):
+    def display(self) -> None:
         """
         This method prints the information of product on console.
         """
@@ -25,7 +25,7 @@ class Product:
             end="\n",
         )
 
-    def total_value(self):
+    def total_value(self) -> float:
         """
         This method returns the total value of product
         Returns:
