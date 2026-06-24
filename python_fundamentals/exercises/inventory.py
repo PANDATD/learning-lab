@@ -56,13 +56,13 @@ def validate_product(product: Product) -> None:
     if not product.name.strip():
         raise ValueError("Product name is required.")
 
-    if not isinstance(product.price, (int, float)):
+    if not isinstance(product.price, (float)):
         raise TypeError("Price must be numeric.")
 
     if product.price <= 0:
         raise ValueError("Price must be greater than zero.")
 
-    if not isinstance(product.quantity, int):
+    if not isinstance(product.quantity, float):
         raise TypeError("Quantity must be an integer.")
 
     if product.quantity <= 0:
@@ -161,7 +161,7 @@ def main() -> None:
 
         total_inventory_value = calculate_inventory_value(products)
 
-        exported_products = export_products(products)
+        exported_products: list[dict[str, object]] = export_products(products)
 
         print(exported_products)
 
