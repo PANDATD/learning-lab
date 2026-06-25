@@ -1,0 +1,48 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - "feature/**"
+      - "refactor/**"
+      - "chore/**"
+      - "fix/**"
+
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  quality-checks:
+    name: Ruff • MyPy • Pytest
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: uv sync --all-groups
+
+      - name: Run Ruff
+        run: uv run ruff check .
+
+      - name: Check formatting
+        run: uv run ruff format --check .
+
+      - name: Run MyPy
+        run: uv run mypy .
+
+      - name: Run Pytest
+        run: uv run pytest -v
