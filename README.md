@@ -1,31 +1,48 @@
-
 # Learning Lab
 
-> A structured, practice-driven repository documenting my journey toward becoming a Python Backend Engineer.
+> **A structured, practice-driven repository documenting my journey toward becoming a Python Backend Engineer.**
 
 ![Python](https://img.shields.io/badge/Python-3.12-blue)
 ![uv](https://img.shields.io/badge/package%20manager-uv-orange)
 ![Pytest](https://img.shields.io/badge/tests-pytest-green)
-![Mypy](https://img.shields.io/badge/type--checking-mypy-blue)
+![MyPy](https://img.shields.io/badge/type--checking-mypy-blue)
 ![Ruff](https://img.shields.io/badge/linter-ruff-red)
 ![Pydantic](https://img.shields.io/badge/validation-pydantic-purple)
 
 ---
 
-## About
+# Table of Contents
 
-This repository contains my daily backend engineering practice.
+* [About](#about)
+* [Repository Structure](#repository-structure)
+* [Learning Roadmap](#learning-roadmap)
+* [Completed Topics](#completed-topics)
+* [Exercises](#exercises)
+* [Tooling](#tooling)
+* [Development Workflow](#development-workflow)
+* [Quality Gates](#quality-gates)
+* [Development Commands](#development-commands)
+* [Learning Philosophy](#learning-philosophy)
+* [Current Focus](#current-focus)
+* [Future Roadmap](#future-roadmap)
+* [License](#license)
 
-The goal is **not only to learn Python syntax**, but also to understand how production backend applications are designed and implemented.
+---
+
+# About
+
+This repository documents my journey toward becoming a Python Backend Engineer.
+
+The focus is not only on learning Python syntax, but also on building the habits required to develop production-quality backend software.
 
 Every topic includes:
 
-* Notes
-* Practical exercises
-* Mini projects
-* Tests
-* Code reviews
-* Best practices
+* 📖 Notes
+* 💻 Practical exercises
+* 🧪 Tests
+* 🔍 Code reviews
+* 📝 Documentation
+* 🛠️ Modern development tooling
 
 ---
 
@@ -33,6 +50,9 @@ Every topic includes:
 
 ```text
 learning-lab/
+│
+├── .github/
+│   └── workflows/
 │
 ├── python_fundamentals/
 │   ├── exercises/
@@ -48,7 +68,7 @@ learning-lab/
 
 # Learning Roadmap
 
-## Python Fundamentals
+## Completed Topics
 
 * [x] Functions & Validation
 * [x] *args & **kwargs
@@ -63,15 +83,15 @@ learning-lab/
 * [x] OOP Fundamentals
 * [x] Pydantic Basics
 
----
-
-## Upcoming
+## Upcoming Topics
 
 * [ ] Advanced Pydantic
+* [ ] Logging
+* [ ] pathlib
 * [ ] File Handling
 * [ ] SQLite
 * [ ] SQL
-* [ ] SQLAlchemy ORM
+* [ ] SQLAlchemy 2.0
 * [ ] Alembic
 * [ ] FastAPI
 * [ ] Authentication
@@ -85,20 +105,20 @@ learning-lab/
 
 # Notes
 
-| Day    | Topic                  |
-| ------ | ---------------------- |
-| Day 01 | Functions & Validation |
-| Day 02 | *args & **kwargs       |
-| Day 03 | Decorators             |
-| Day 04 | Context Managers       |
-| Day 05 | contextlib             |
-| Day 06 | Type Hints             |
-| Day 07 | Dataclasses            |
-| Day 08 | Inventory Manager      |
-| Day 09 | Pytest                 |
-| Day 10 | TypedDict              |
-| Day 11 | OOP Fundamentals       |
-| Day 12 | Pydantic Basics        |
+| Day | Topic                  | Status |
+| --- | ---------------------- | :----: |
+| 01  | Functions & Validation |    ✅   |
+| 02  | *args & **kwargs       |    ✅   |
+| 03  | Decorators             |    ✅   |
+| 04  | Context Managers       |    ✅   |
+| 05  | contextlib             |    ✅   |
+| 06  | Type Hints             |    ✅   |
+| 07  | Dataclasses            |    ✅   |
+| 08  | Inventory Manager      |    ✅   |
+| 09  | Pytest Basics          |    ✅   |
+| 10  | TypedDict              |    ✅   |
+| 11  | OOP Fundamentals       |    ✅   |
+| 12  | Pydantic Basics        |    ✅   |
 
 ---
 
@@ -108,29 +128,45 @@ Current exercises include:
 
 * Pricing Calculator
 * Inventory Manager
-* Dataclass Basics
 * Context Managers
-* Decorator Examples
+* Decorators
 * Product Manager (OOP)
 * Pydantic Basics
 * User Validation
+* Custom Timer Decorator
 
 ---
 
 # Tooling
 
-This repository uses modern Python tooling.
-
-* Python 3.12+
-* uv
-* Ruff
-* Mypy
-* Pytest
-* Pydantic
+| Tool       | Purpose                       |
+| ---------- | ----------------------------- |
+| Python     | Programming Language          |
+| uv         | Package & Environment Manager |
+| Ruff       | Linter & Formatter            |
+| MyPy       | Static Type Checker           |
+| Pytest     | Testing Framework             |
+| Pydantic   | Runtime Data Validation       |
+| Git        | Version Control               |
+| pre-commit | Git Hooks                     |
 
 ---
 
-# Development
+# Quality Gates
+
+Every change must pass these checks before it is committed.
+
+```bash
+ruff check .
+ruff format --check .
+mypy .
+uv run pytest -v
+pre-commit run --all-files
+```
+
+---
+
+# Development Commands
 
 Install dependencies
 
@@ -141,13 +177,7 @@ uv sync
 Run tests
 
 ```bash
-uv run pytest
-```
-
-Run mypy
-
-```bash
-uv run mypy .
+uv run pytest -v
 ```
 
 Run Ruff
@@ -156,17 +186,58 @@ Run Ruff
 uv run ruff check .
 ```
 
-Auto-fix Ruff
+Check formatting
 
 ```bash
-uv run ruff check . --fix
+uv run ruff format --check .
+```
+
+Run MyPy
+
+```bash
+uv run mypy .
+```
+
+---
+
+# Development Workflow
+
+```text
+Create Branch
+      │
+      ▼
+Write Code
+      │
+      ▼
+Review Code
+      │
+      ▼
+Ruff
+      │
+      ▼
+MyPy
+      │
+      ▼
+Pytest
+      │
+      ▼
+pre-commit
+      │
+      ▼
+Commit
+      │
+      ▼
+Push
+      │
+      ▼
+Pull Request
 ```
 
 ---
 
 # Learning Philosophy
 
-Every topic follows the same workflow.
+Every topic follows the same process.
 
 ```text
 Learn
@@ -175,13 +246,13 @@ Understand
     ↓
 Practice
     ↓
-Mini Project
+Exercise
     ↓
-Notes
+Write Notes
     ↓
 Code Review
     ↓
-Tests
+Quality Gates
     ↓
 Git Commit
 ```
@@ -190,17 +261,29 @@ Git Commit
 
 # Current Focus
 
-Currently learning:
+**Currently Learning**
 
-* Pydantic
+* Advanced Pydantic
 * Runtime Validation
 * Backend Engineering Best Practices
 
-Next milestone:
+**Next Milestone**
 
-* FastAPI
+* SQL
 * SQLAlchemy
+* FastAPI
 * Production-grade Backend APIs
+
+---
+
+# Future Roadmap
+
+* GitHub Actions (CI)
+* Docker
+* PostgreSQL
+* Redis
+* Testcontainers
+* Production Deployment
 
 ---
 
