@@ -21,7 +21,9 @@ class Product:
         This method prints the information of product on console.
         """
         print(
-            f"Product Name: {self.name}\nPrice: {self.price}\nQuantity: {self.quantity}\n",
+            f"""Product Name: {self.name}\n
+            Price: {self.price}\n
+            Quantity: {self.quantity}\n""",
             end="\n",
         )
 
