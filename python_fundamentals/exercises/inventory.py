@@ -14,8 +14,10 @@ for storing products, validating product data, calculating
 inventory value, and exporting products as dictionaries.
 """
 
+from collections.abc import Generator
 from contextlib import contextmanager
 from dataclasses import asdict, dataclass
+from typing import Any
 
 
 @dataclass
@@ -56,13 +58,13 @@ def validate_product(product: Product) -> None:
     if not product.name.strip():
         raise ValueError("Product name is required.")
 
-    if not isinstance(product.price, (float)):
+    if not isinstance(product.price, (int, float)):
         raise TypeError("Price must be numeric.")
 
     if product.price <= 0:
         raise ValueError("Price must be greater than zero.")
 
-    if not isinstance(product.quantity, float):
+    if not isinstance(product.quantity, (int)):
         raise TypeError("Quantity must be an integer.")
 
     if product.quantity <= 0:
@@ -94,7 +96,7 @@ def calculate_inventory_value(
 
 
 @contextmanager
-def inventory_session():
+def inventory_session() -> Generator[None, Any, None]:
     """
     Simulate an inventory session.
 

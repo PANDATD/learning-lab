@@ -3,7 +3,9 @@ from python_fundamentals.exercises.pricing import (
 )
 
 
-def test_discounted_price():
-    result = calculate_discounted_price(100, 2, 10)
+def test_discounted_price() -> None:
+    result: float = calculate_discounted_price(
+        price=100, quantity=2, discount_percentage=10
+    )
 
     assert result == 180.0

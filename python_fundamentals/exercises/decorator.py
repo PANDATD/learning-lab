@@ -9,11 +9,11 @@
 # Works with any function signature using *args and **kwargs.
 # Preserves function metadata using functools.wraps.
 
-from timer import timer
+from .timer import timer
 
 
 @timer
-def calculate_sum():
+def calculate_sum() -> int:
     total = 0
 
     for i in range(1_000_000):
@@ -29,4 +29,4 @@ def greet(name: str) -> str:
 
 if __name__ == "__main__":
     print(calculate_sum())
-    print(greet("Madhav"))
+    print(greet(name="Madhav"))
