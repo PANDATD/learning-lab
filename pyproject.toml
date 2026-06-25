@@ -1,7 +1,7 @@
 [project]
 name = "learning-lab"
 version = "0.1.0"
-description = "Structured Python backend engineering practice with notes, exercises, mini-projects, and testing. "
+description = "Structured Python backend engineering practice with notes, exercises, mini-projects, and testing."
 readme = "README.md"
 requires-python = ">=3.12"
 
@@ -10,23 +10,30 @@ dependencies = [
     "pytest>=9.1.1",
 ]
 
+[dependency-groups]
+dev = [
+    "black>=26.5.1",
+    "mypy>=1.18.2",
+    "pre-commit>=4.6.0",
+    "ruff>=0.15.18",
+]
+
+# -----------------------------------------------------------------------------
+# Pytest
+# -----------------------------------------------------------------------------
+
 [tool.pytest.ini_options]
-addopts = "--import-mode=importlib"
+addopts = "--import-mode=importlib -v"
 testpaths = [
     "python_fundamentals/tests",
 ]
-
 python_files = [
     "test_*.py",
 ]
 
-
-[dependency-groups]
-dev = [
-    "black>=26.5.1",
-    "mypy>=2.1.0",
-    "ruff>=0.15.18",
-]
+# -----------------------------------------------------------------------------
+# Ruff
+# -----------------------------------------------------------------------------
 
 [tool.ruff]
 line-length = 88
@@ -34,23 +41,36 @@ target-version = "py312"
 
 [tool.ruff.lint]
 select = [
-    "E",
-    "F",
-    "I",
-    "UP",
+    "E",   # pycodestyle errors
+    "F",   # pyflakes
+    "I",   # isort
+    "UP",  # pyupgrade
 ]
+
+# -----------------------------------------------------------------------------
+# Black
+# -----------------------------------------------------------------------------
+
+[tool.black]
+line-length = 88
+target-version = ["py312"]
+
+# -----------------------------------------------------------------------------
+# MyPy
+# -----------------------------------------------------------------------------
 
 [tool.mypy]
 python_version = "3.12"
 
-strict = true
-
 warn_return_any = true
 warn_unused_configs = true
+warn_redundant_casts = true
+warn_unused_ignores = true
 
 disallow_untyped_defs = true
 disallow_incomplete_defs = true
-
 check_untyped_defs = true
 
 no_implicit_optional = true
+pretty = true
+show_error_codes = true

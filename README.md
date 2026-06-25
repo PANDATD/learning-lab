@@ -1,124 +1,209 @@
 
 # Learning Lab
 
-Structured Python Backend Engineering Practice Repository
+> A structured, practice-driven repository documenting my journey toward becoming a Python Backend Engineer.
 
-This repository contains my hands-on Python backend engineering practice, notes, exercises, and mini-projects. The goal is to build strong backend engineering fundamentals through implementation, testing, code reviews, and project-based learning.
-
----
-
-## Learning Progress
-
-### Python Fundamentals
-
-* [x] Day 01 - Functions and Validation
-* [x] Day 02 - *args and **kwargs
-* [x] Day 03 - Decorators and functools.wraps
-* [x] Day 04 - Context Managers (**enter** / **exit**)
-* [x] Day 05 - contextlib.contextmanager
-* [x] Day 06 - Type Hints and Generics
-* [x] Day 07 - Dataclasses
-* [x] Day 08 - Inventory Manager Mini Project
+![Python](https://img.shields.io/badge/Python-3.12-blue)
+![uv](https://img.shields.io/badge/package%20manager-uv-orange)
+![Pytest](https://img.shields.io/badge/tests-pytest-green)
+![Mypy](https://img.shields.io/badge/type--checking-mypy-blue)
+![Ruff](https://img.shields.io/badge/linter-ruff-red)
+![Pydantic](https://img.shields.io/badge/validation-pydantic-purple)
 
 ---
 
-## Notes Index
+## About
 
-| Day | Topic                  | Notes                                                                     |
-| --- | ---------------------- | ------------------------------------------------------------------------- |
-| 01  | Functions & Validation | [View Notes](python-fundamentals/notes/day01-functions-and-validation.md) |
-| 02  | *args and **kwargs     | [View Notes](python-fundamentals/notes/day02-args-and-kwargs.md)          |
-| 03  | Decorators             | [View Notes](python-fundamentals/notes/day03-decorators.md)               |
-| 04  | Context Managers       | [View Notes](python-fundamentals/notes/day04-context-managers.md)         |
-| 05  | contextlib             | [View Notes](python-fundamentals/notes/day05-contextlib.md)               |
-| 06  | Type Hints             | [View Notes](python-fundamentals/notes/day06-type-hints.md)               |
-| 07  | Dataclasses            | [View Notes](python-fundamentals/notes/day07-dataclasses.md)              |
-| 08  | Inventory Manager      | [View Notes](python-fundamentals/notes/day08-inventory-manager.md)        |
+This repository contains my daily backend engineering practice.
 
----
+The goal is **not only to learn Python syntax**, but also to understand how production backend applications are designed and implemented.
 
-## Exercises Index
+Every topic includes:
 
-| Topic                  | Exercise                     |
-| ---------------------- | ---------------------------- |
-| Functions & Validation | `pricing.py`                 |
-| Decorators             | `decorator.py`               |
-| Context Managers       | `context_manager.py`         |
-| contextlib             | `contextlib_example.py`      |
-| Dataclasses            | `understanding_dataclass.py` |
-| Inventory Manager      | `inventory.py`               |
+* Notes
+* Practical exercises
+* Mini projects
+* Tests
+* Code reviews
+* Best practices
 
 ---
 
-## Repository Structure
+# Repository Structure
 
 ```text
 learning-lab/
 │
-├── python-fundamentals/
+├── python_fundamentals/
 │   ├── exercises/
 │   ├── notes/
 │   └── tests/
 │
+├── pyproject.toml
+├── uv.lock
 └── README.md
 ```
 
 ---
 
-## Current Focus
+# Learning Roadmap
 
-### Completed
+## Python Fundamentals
 
-* Functions
-* Validation
-* *args / **kwargs
-* Decorators
-* Context Managers
-* contextlib
-* Type Hints
-* Dataclasses
-* Mini Project Development
+* [x] Functions & Validation
+* [x] *args & **kwargs
+* [x] Decorators
+* [x] Context Managers
+* [x] contextlib
+* [x] Type Hints
+* [x] Dataclasses
+* [x] Inventory Mini Project
+* [x] Pytest Basics
+* [x] TypedDict
+* [x] OOP Fundamentals
+* [x] Pydantic Basics
 
-### Next Topics
+---
 
-* [ ] Pytest
-* [ ] TypedDict
-* [ ] Object-Oriented Programming (OOP)
-* [ ] Pydantic
-* [ ] REST APIs
-* [ ] FastAPI
-* [ ] SQLAlchemy
+## Upcoming
+
+* [ ] Advanced Pydantic
+* [ ] File Handling
+* [ ] SQLite
+* [ ] SQL
+* [ ] SQLAlchemy ORM
 * [ ] Alembic
+* [ ] FastAPI
+* [ ] Authentication
+* [ ] Docker
 * [ ] PostgreSQL
+* [ ] Testing with Fixtures
+* [ ] Dependency Injection
+* [ ] Clean Architecture
 
 ---
 
-## Learning Principles
+# Notes
 
-* Learn by implementation
-* Write notes after every lesson
-* Build mini-projects
-* Practice Git workflows
-* Use Pull Requests
-* Review and refactor code
-* Add tests for every project
-* Focus on backend engineering fundamentals
-
----
-
-## Future Improvements
-
-* Add pytest test suite
-* Add Ruff configuration
-* Add MyPy type checking
-* Add CI workflow
-* Add SQLite examples
-* Add FastAPI projects
-* Add SQLAlchemy projects
-* Add PostgreSQL integration
+| Day    | Topic                  |
+| ------ | ---------------------- |
+| Day 01 | Functions & Validation |
+| Day 02 | *args & **kwargs       |
+| Day 03 | Decorators             |
+| Day 04 | Context Managers       |
+| Day 05 | contextlib             |
+| Day 06 | Type Hints             |
+| Day 07 | Dataclasses            |
+| Day 08 | Inventory Manager      |
+| Day 09 | Pytest                 |
+| Day 10 | TypedDict              |
+| Day 11 | OOP Fundamentals       |
+| Day 12 | Pydantic Basics        |
 
 ---
 
-## Goal
+# Exercises
 
-Build production-ready Python backend engineering skills through structured practice, documentation, testing, and real-world mini projects.
+Current exercises include:
+
+* Pricing Calculator
+* Inventory Manager
+* Dataclass Basics
+* Context Managers
+* Decorator Examples
+* Product Manager (OOP)
+* Pydantic Basics
+* User Validation
+
+---
+
+# Tooling
+
+This repository uses modern Python tooling.
+
+* Python 3.12+
+* uv
+* Ruff
+* Mypy
+* Pytest
+* Pydantic
+
+---
+
+# Development
+
+Install dependencies
+
+```bash
+uv sync
+```
+
+Run tests
+
+```bash
+uv run pytest
+```
+
+Run mypy
+
+```bash
+uv run mypy .
+```
+
+Run Ruff
+
+```bash
+uv run ruff check .
+```
+
+Auto-fix Ruff
+
+```bash
+uv run ruff check . --fix
+```
+
+---
+
+# Learning Philosophy
+
+Every topic follows the same workflow.
+
+```text
+Learn
+    ↓
+Understand
+    ↓
+Practice
+    ↓
+Mini Project
+    ↓
+Notes
+    ↓
+Code Review
+    ↓
+Tests
+    ↓
+Git Commit
+```
+
+---
+
+# Current Focus
+
+Currently learning:
+
+* Pydantic
+* Runtime Validation
+* Backend Engineering Best Practices
+
+Next milestone:
+
+* FastAPI
+* SQLAlchemy
+* Production-grade Backend APIs
+
+---
+
+# License
+
+This repository is maintained for educational purposes and continuous backend engineering practice.
