@@ -4,7 +4,7 @@ from python_fundamentals.exercises.inventory import Product, validate_product
 
 
 def test_invalid_product() -> None:
-    with pytest.raises(ValueError):
+    with pytest.raises(TypeError):
         validate_product(
             Product(
                 name="laptop",

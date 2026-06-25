@@ -58,7 +58,7 @@ def validate_product(product: Product) -> None:
     if not product.name.strip():
         raise ValueError("Product name is required.")
 
-    if not isinstance(product.price, (int, float)):
+    if not isinstance(product.price, (float)):
         raise TypeError("Price must be numeric.")
 
     if product.price <= 0:
