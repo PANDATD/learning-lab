@@ -1,3 +1,4 @@
+
 # Learning Lab
 
 > **A structured, practice-driven repository documenting my journey toward becoming a Python Backend Engineer.**
@@ -11,38 +12,20 @@
 
 ---
 
-# Table of Contents
-
-* [About](#about)
-* [Repository Structure](#repository-structure)
-* [Learning Roadmap](#learning-roadmap)
-* [Completed Topics](#completed-topics)
-* [Exercises](#exercises)
-* [Tooling](#tooling)
-* [Development Workflow](#development-workflow)
-* [Quality Gates](#quality-gates)
-* [Development Commands](#development-commands)
-* [Learning Philosophy](#learning-philosophy)
-* [Current Focus](#current-focus)
-* [Future Roadmap](#future-roadmap)
-* [License](#license)
-
----
-
 # About
 
 This repository documents my journey toward becoming a Python Backend Engineer.
 
-The focus is not only on learning Python syntax, but also on building the habits required to develop production-quality backend software.
+The objective is not only to learn Python syntax but also to build production-quality backend applications using modern engineering practices.
 
-Every topic includes:
+Every lesson includes:
 
 * 📖 Notes
 * 💻 Practical exercises
-* 🧪 Tests
+* 🧪 Pytest test cases
 * 🔍 Code reviews
-* 📝 Documentation
-* 🛠️ Modern development tooling
+* 🛠️ Static type checking
+* ✅ Best practices
 
 ---
 
@@ -68,7 +51,7 @@ learning-lab/
 
 # Learning Roadmap
 
-## Completed Topics
+## Python Fundamentals
 
 * [x] Functions & Validation
 * [x] *args & **kwargs
@@ -82,13 +65,16 @@ learning-lab/
 * [x] TypedDict
 * [x] OOP Fundamentals
 * [x] Pydantic Basics
+* [x] Advanced Pydantic – EmailStr & `field_validator`
 
-## Upcoming Topics
+---
 
-* [ ] Advanced Pydantic
-* [ ] Logging
-* [ ] pathlib
+## Upcoming
+
+* [ ] Advanced Pydantic – `model_validator`
+* [ ] Nested Models
 * [ ] File Handling
+* [ ] Logging
 * [ ] SQLite
 * [ ] SQL
 * [ ] SQLAlchemy 2.0
@@ -97,6 +83,7 @@ learning-lab/
 * [ ] Authentication
 * [ ] Docker
 * [ ] PostgreSQL
+* [ ] GitHub Actions
 * [ ] Testing with Fixtures
 * [ ] Dependency Injection
 * [ ] Clean Architecture
@@ -105,20 +92,21 @@ learning-lab/
 
 # Notes
 
-| Day | Topic                  | Status |
-| --- | ---------------------- | :----: |
-| 01  | Functions & Validation |    ✅   |
-| 02  | *args & **kwargs       |    ✅   |
-| 03  | Decorators             |    ✅   |
-| 04  | Context Managers       |    ✅   |
-| 05  | contextlib             |    ✅   |
-| 06  | Type Hints             |    ✅   |
-| 07  | Dataclasses            |    ✅   |
-| 08  | Inventory Manager      |    ✅   |
-| 09  | Pytest Basics          |    ✅   |
-| 10  | TypedDict              |    ✅   |
-| 11  | OOP Fundamentals       |    ✅   |
-| 12  | Pydantic Basics        |    ✅   |
+| Day | Topic                                            | Status |
+| --- | ------------------------------------------------ | :----: |
+| 01  | Functions & Validation                           |    ✅   |
+| 02  | *args & **kwargs                                 |    ✅   |
+| 03  | Decorators                                       |    ✅   |
+| 04  | Context Managers                                 |    ✅   |
+| 05  | contextlib                                       |    ✅   |
+| 06  | Type Hints                                       |    ✅   |
+| 07  | Dataclasses                                      |    ✅   |
+| 08  | Inventory Manager                                |    ✅   |
+| 09  | Pytest Basics                                    |    ✅   |
+| 10  | TypedDict                                        |    ✅   |
+| 11  | OOP Fundamentals                                 |    ✅   |
+| 12  | Pydantic Basics                                  |    ✅   |
+| 13  | Advanced Pydantic – EmailStr & `field_validator` |    ✅   |
 
 ---
 
@@ -132,41 +120,41 @@ Current exercises include:
 * Decorators
 * Product Manager (OOP)
 * Pydantic Basics
+* Email Validation
+* Custom Field Validators
 * User Validation
-* Custom Timer Decorator
 
 ---
 
 # Tooling
 
-| Tool       | Purpose                       |
-| ---------- | ----------------------------- |
-| Python     | Programming Language          |
-| uv         | Package & Environment Manager |
-| Ruff       | Linter & Formatter            |
-| MyPy       | Static Type Checker           |
-| Pytest     | Testing Framework             |
-| Pydantic   | Runtime Data Validation       |
-| Git        | Version Control               |
-| pre-commit | Git Hooks                     |
+| Tool         | Purpose                          |
+| ------------ | -------------------------------- |
+| Python 3.12+ | Programming Language             |
+| uv           | Package & Environment Management |
+| Ruff         | Linter & Formatter               |
+| MyPy         | Static Type Checking             |
+| Pytest       | Testing Framework                |
+| Pydantic     | Runtime Data Validation          |
+| pre-commit   | Git Hooks                        |
 
 ---
 
 # Quality Gates
 
-Every change must pass these checks before it is committed.
+Every change must pass the following quality checks before being committed.
 
 ```bash
-ruff check .
-ruff format --check .
-mypy .
+uv run ruff check .
+uv run ruff format --check .
+uv run mypy .
 uv run pytest -v
-pre-commit run --all-files
+uv run pre-commit run --all-files
 ```
 
 ---
 
-# Development Commands
+# Development
 
 Install dependencies
 
@@ -174,10 +162,22 @@ Install dependencies
 uv sync
 ```
 
+Run all quality checks
+
+```bash
+uv run pre-commit run --all-files
+```
+
 Run tests
 
 ```bash
 uv run pytest -v
+```
+
+Run MyPy
+
+```bash
+uv run mypy .
 ```
 
 Run Ruff
@@ -192,52 +192,17 @@ Check formatting
 uv run ruff format --check .
 ```
 
-Run MyPy
+Automatically fix lint issues
 
 ```bash
-uv run mypy .
-```
-
----
-
-# Development Workflow
-
-```text
-Create Branch
-      │
-      ▼
-Write Code
-      │
-      ▼
-Review Code
-      │
-      ▼
-Ruff
-      │
-      ▼
-MyPy
-      │
-      ▼
-Pytest
-      │
-      ▼
-pre-commit
-      │
-      ▼
-Commit
-      │
-      ▼
-Push
-      │
-      ▼
-Pull Request
+uv run ruff check . --fix
 ```
 
 ---
 
 # Learning Philosophy
 
-Every topic follows the same process.
+Every lesson follows the same engineering workflow.
 
 ```text
 Learn
@@ -252,38 +217,49 @@ Write Notes
     ↓
 Code Review
     ↓
-Quality Gates
+Ruff
+    ↓
+MyPy
+    ↓
+Pytest
+    ↓
+pre-commit
     ↓
 Git Commit
+    ↓
+Push
 ```
 
 ---
 
 # Current Focus
 
-**Currently Learning**
+Currently learning:
 
 * Advanced Pydantic
 * Runtime Validation
-* Backend Engineering Best Practices
+* Custom Field Validation
 
-**Next Milestone**
+Next milestone:
 
-* SQL
-* SQLAlchemy
-* FastAPI
-* Production-grade Backend APIs
+* `model_validator`
+* Nested Models
+* FastAPI Request Validation
 
 ---
 
-# Future Roadmap
+# Long-Term Goal
 
-* GitHub Actions (CI)
-* Docker
+Build production-ready backend applications using:
+
+* FastAPI
+* SQLAlchemy 2.0
 * PostgreSQL
-* Redis
-* Testcontainers
-* Production Deployment
+* Docker
+* GitHub Actions
+* Clean Architecture
+* Dependency Injection
+* Automated Testing
 
 ---
 
