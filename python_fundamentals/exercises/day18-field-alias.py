@@ -76,9 +76,9 @@ except ValidationError as exc:
 
 try:
     emp2: Employee = Employee(
-        first_name="swaroop",
-        last_name="dixit",
-        monthly_salary=20000,
+        first_name="swaroop",  # type: ignore
+        last_name="dixit",  # type: ignore
+        monthly_salary=20000,  # type: ignore
     )
     print(emp2.model_dump())
 except ValidationError as exc:
