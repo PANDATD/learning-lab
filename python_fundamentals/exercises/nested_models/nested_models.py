@@ -53,6 +53,7 @@ class Department(StrEnum):
     ADMIN = "ADMIN"
     MARKETING = "MARKETING"
     OPERATIONS = "OPERATIONS"
+    SALES = "SALES"
 
 
 class TestEmployee(BaseModel):
@@ -97,7 +98,7 @@ try:
         first_name="Vignesh",
         last_name="Gawali",
         email="vbg3008@gmail.com",
-        department="SALES",
+        department=Department.SALES,
     )
 
     print(test_employee_2.model_dump())
