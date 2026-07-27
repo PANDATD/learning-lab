@@ -12,16 +12,18 @@ class Product:
     tax_rate: float = 0.18  # class attribute
 
     def __init__(self, name: str, price: float, quantity: int):
-        self.name = name
-        self.price = price
-        self.quantity = quantity
+        self.name: str = name
+        self.price: float = price
+        self.quantity: int = quantity
 
     def display(self) -> None:
         """
         This method prints the information of product on console.
         """
         print(
-            f"Product Name: {self.name}\nPrice: {self.price}\nQuantity: {self.quantity}\n",
+            f"""Product Name: {self.name}\n
+            Price: {self.price}\n
+            Quantity: {self.quantity}\n""",
             end="\n",
         )
 
@@ -45,7 +47,7 @@ class Product:
                 None
 
         """
-        self.percentage = percentage
+        self.percentage: float = percentage
         self.price = self.price - (self.price * self.percentage / 100)
 
     def discounted_price(self, percentage: float) -> float:
@@ -68,19 +70,17 @@ if __name__ == "__main__":
     )
 
     mobile.display()
-    mobile.total_value()
+    _ = mobile.total_value()
     discounted_price = mobile.discounted_price(percentage=10)
     print(discounted_price)
     print(mobile.price)
     mobile.apply_discount(percentage=10)
     print(mobile.price)
-    mobile.tax_rate
 
     laptop.display()
-    laptop.total_value()
+    _ = laptop.total_value()
     discounted_price = laptop.discounted_price(percentage=10)
     print(discounted_price)
     print(laptop.price)
     laptop.apply_discount(percentage=10)
     print(laptop.price)
-    laptop.tax_rate

@@ -3,8 +3,8 @@ import pytest
 from python_fundamentals.exercises.inventory import Product, validate_product
 
 
-def test_invalid_product():
-    with pytest.raises(ValueError):
+def test_invalid_product() -> None:
+    with pytest.raises(TypeError):
         validate_product(
             Product(
                 name="laptop",

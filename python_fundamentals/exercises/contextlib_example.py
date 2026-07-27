@@ -1,8 +1,10 @@
+from collections.abc import Generator
 from contextlib import contextmanager
+from typing import Any, Literal
 
 
 @contextmanager
-def timer():
+def timer() -> Generator[None, None, None]:
     print("Starting timer...")
 
     yield
@@ -32,7 +34,7 @@ Use it with:
 
 
 @contextmanager
-def get_session():
+def get_session() -> Generator[Literal["Connected to PostgresSQL"], Any, None]:
     print("Opning database session")
     try:
         yield "Connected to PostgresSQL"

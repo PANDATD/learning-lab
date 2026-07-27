@@ -1,46 +1,31 @@
-"""
-
-Before we move on, create your own context manager:
-`class DatabaseSession:`
-
-Requirements:
-
-Connecting to database...
-Running query...
-Closing database connection...
-
-using:
-
-__enter__()
-__exit__()
-
-Keep it simple. No real database needed.
-
-"""
+from types import TracebackType
+from typing import Literal, Self
 
 
 class DatabaseSession:
-    """
+    """A simple context manager that simulates a database session."""
 
-    This DatabaseSession Context manager
-    implemented using __enter__ and __exit__ methods
-    """
+    def __enter__(self) -> Self:
+        """Open the simulated database connection."""
 
-    def __enter__(self):
-        print("Connecting to database")
+        print("Connecting to database...")
         return self
 
     def __exit__(
         self,
-        exc_type,
-        exc_value,
-        traceback,
-    ):
-        print(f"Exception: {exc_type}")
-        print("Closing database connnection...")
+        exc_type: type[BaseException] | None,
+        exc_value: BaseException | None,
+        traceback: TracebackType | None,
+    ) -> Literal[True]:
+        """Close the simulated database connection."""
+
+        if exc_type is not None:
+            print(f"Exception: {exc_value}")
+
+        print("Closing database connection...")
         return True
 
 
-with DatabaseSession() as session:
-    print("Running query")
-    raise ValueError("DB Error")
+with DatabaseSession():
+    print("Running query...")
+    raise RuntimeError("Database connection lost.")
