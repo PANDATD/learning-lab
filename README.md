@@ -22,7 +22,7 @@ Every lesson includes:
 
 * 📖 Notes
 * 💻 Practical exercises
-* 🧪 Pytest test cases
+* �� Pytest test cases
 * 🔍 Code reviews
 * 🛠️ Static type checking
 * ✅ Best practices
@@ -66,13 +66,13 @@ learning-lab/
 * [x] OOP Fundamentals
 * [x] Pydantic Basics
 * [x] Advanced Pydantic – EmailStr & `field_validator`
+* [x] Advanced Pydantic – `computed_field`, `model_validate`, runtime parsing
 
 ---
 
 ## Upcoming
 
-* [ ] Advanced Pydantic – `model_validator`
-* [ ] Nested Models
+* [ ] Nested Models (Pydantic)
 * [ ] File Handling
 * [ ] Logging
 * [ ] SQLite
@@ -83,10 +83,21 @@ learning-lab/
 * [ ] Authentication
 * [ ] Docker
 * [ ] PostgreSQL
-* [ ] GitHub Actions
+* [ ] GitHub Actions (workflows & CI hardening)
 * [ ] Testing with Fixtures
 * [ ] Dependency Injection
 * [ ] Clean Architecture
+
+---
+
+# Recent updates
+
+- Completed focused work on Advanced Pydantic features: computed_field, model_validate and improving examples to be type-checker friendly.
+- Fixed CI type-check failures (mypy/pyright) across example exercises by:
+  - Using `model_validate({...})` when intentionally providing string inputs or extra fields in examples.
+  - Removing unused `# type: ignore` comments.
+  - Calling `computed_field` descriptors (e.g. `product.subtotal()`) so static analyzers infer correct return types.
+- Merged fixes in PR #29: https://github.com/PANDATD/learning-lab/pull/29
 
 ---
 
@@ -107,6 +118,9 @@ learning-lab/
 | 11  | OOP Fundamentals                                 |    ✅   |
 | 12  | Pydantic Basics                                  |    ✅   |
 | 13  | Advanced Pydantic – EmailStr & `field_validator` |    ✅   |
+| 24  | Advanced Pydantic – `computed_field` & Decimal   |    ✅   |
+| 25  | Date & DateTime (Pydantic parsing)               |    ✅   |
+| 26  | model_dump() & Serialization                     |    ✅   |
 
 ---
 
@@ -236,13 +250,12 @@ Push
 
 Currently learning:
 
-* Advanced Pydantic
-* Runtime Validation
-* Custom Field Validation
+* Advanced Pydantic (computed_field, model_validate)
+* Runtime Validation & parsing
+* Static typing compatibility with Pydantic examples
 
 Next milestone:
 
-* `model_validator`
 * Nested Models
 * FastAPI Request Validation
 
