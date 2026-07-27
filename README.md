@@ -12,6 +12,24 @@
 
 ---
 
+## Table of Contents
+
+- [About](#about)
+- [Repository Structure](#repository-structure)
+- [Learning Roadmap](#learning-roadmap)
+- [Recent updates](#recent-updates)
+- [Notes](#notes)
+- [Exercises](#exercises)
+- [Tooling](#tooling)
+- [Quality Gates](#quality-gates)
+- [Development](#development)
+- [Learning Philosophy](#learning-philosophy)
+- [Current Focus](#current-focus)
+- [Long-Term Goal](#long-term-goal)
+- [License](#license)
+
+---
+
 # About
 
 This repository documents my journey toward becoming a Python Backend Engineer.
@@ -22,7 +40,7 @@ Every lesson includes:
 
 * 📖 Notes
 * 💻 Practical exercises
-* �� Pytest test cases
+* 🧪 Pytest test cases
 * 🔍 Code reviews
 * 🛠️ Static type checking
 * ✅ Best practices
