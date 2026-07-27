@@ -42,12 +42,9 @@ try:
 
     format_emp()
 
-    another_emp: Employee = Employee(
-        emp_name="Tejas Dixit",
-        joining_date="2024-12-29",
-        # Intentional: Pydantic will conert it into date format
-        created_at="2024-12-28 12:12",
-        # Intentional: Pydantic model will convert it into datetime format
+    # Use model_validate to pass string inputs (so static checkers don't flag arg-type).
+    another_emp = Employee.model_validate(
+        {"emp_name": "Tejas Dixit", "joining_date": "2024-12-29", "created_at": "2024-12-28 12:12"}
     )
 
     print(
@@ -55,7 +52,6 @@ try:
     )  # exclude `created_at` field.
 
     print(f"ADMIN View: {another_emp.model_dump(exclude={'joining_date'})}")
-
 
 except (ValueError, ValidationError) as exc:
     print(exc)

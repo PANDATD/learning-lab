@@ -75,10 +75,13 @@ except ValidationError as exc:
     print(exc)
 
 try:
+    # `populate_by_name=True` allows construction with snake_case names;
+    # the `# type: ignore` comments were unused and flagged by the type checker,
+    # so remove them.
     emp2: Employee = Employee(
-        first_name="swaroop",  # type: ignore
-        last_name="dixit",  # type: ignore
-        monthly_salary=20000,  # type: ignore
+        first_name="swaroop",
+        last_name="dixit",
+        monthly_salary=20000,
     )
     print(emp2.model_dump())
 except ValidationError as exc:
