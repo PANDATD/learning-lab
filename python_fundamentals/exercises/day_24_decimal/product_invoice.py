@@ -23,14 +23,16 @@ class Invoice(BaseModel):
     def subtotal_total(self) -> Decimal:
         total: Decimal = Decimal("0")
         for product in self.products:
-            total += product.subtotal
+            # call the computed_field so static type-checkers see a Decimal result
+            total += product.subtotal()
         return total
 
     @computed_field
     def grand_total(self) -> Decimal:
-        subtotal: Decimal = self.subtotal_total
-        gst_amount = subtotal * (self.gst_percentage / 100)
-        return Decimal(subtotal + gst_amount)
+        subtotal: Decimal = self.subtotal_total()
+        # divide by Decimal to avoid mixing floats with Decimals
+        gst_amount = subtotal * (self.gst_percentage / Decimal("100"))
+        return subtotal + gst_amount
 
 
 p1: Product = Product(name="Sugar", price=Decimal("20.00"), quantity=1)
