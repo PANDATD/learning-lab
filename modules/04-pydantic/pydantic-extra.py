@@ -42,7 +42,11 @@ if __name__ == "__main__":
         # Use model_validate when passing extra fields via a mapping so static type
         # checkers don't complain about unexpected keyword arguments.
         event = EventLog.model_validate(
-            {"event_id": 0, "event_type": "Error", "event_description": "ValidationError"}
+            {
+                "event_id": 0,
+                "event_type": "Error",
+                "event_description": "ValidationError",
+            }
         )
 
         print(event.model_dump())
