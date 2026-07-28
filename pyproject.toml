@@ -25,12 +25,8 @@ dev = [
 
 [tool.pytest.ini_options]
 addopts = "--import-mode=importlib -v"
-testpaths = [
-    "python_fundamentals/tests",
-]
-python_files = [
-    "test_*.py",
-]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
 
 # -----------------------------------------------------------------------------
 # Ruff
@@ -63,6 +59,9 @@ target-version = ["py312"]
 [tool.mypy]
 python_version = "3.12"
 
+pretty = true
+show_error_codes = true
+
 warn_return_any = true
 warn_unused_configs = true
 warn_redundant_casts = true
@@ -73,5 +72,5 @@ disallow_incomplete_defs = true
 check_untyped_defs = true
 
 no_implicit_optional = true
-pretty = true
-show_error_codes = true
+
+explicit_package_bases = true

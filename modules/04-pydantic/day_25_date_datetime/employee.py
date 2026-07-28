@@ -23,7 +23,11 @@ try:
     # Use model_validate for string inputs to avoid static type errors and to
     # keep intentional parsing tests.
     vignesh_gawali = Employee.model_validate(
-        {"emp_name": "Vignesh Gawali", "joining_date": "2024-12-12", "created_at": "2024-12-12 12:12"}
+        {
+            "emp_name": "Vignesh Gawali",
+            "joining_date": "2024-12-12",
+            "created_at": "2024-12-12 12:12",
+        }
     )
 
     print(f"Python Representaion of Employee Object: {vignesh_gawali.model_dump()}")
