@@ -20,3 +20,26 @@
 ## Next Action
 
 Learn relationships.
+
+
+# Reflection
+
+## What I Learned
+
+- Python objects live in RAM.
+- RAM is temporary.
+- SQLite stores data permanently.
+- A SQLite database is a single `.db` file.
+- One database file can contain multiple tables.
+
+## Mistakes
+
+-
+
+## Questions
+
+-
+
+## Next Action
+
+Learn SQLite CLI.

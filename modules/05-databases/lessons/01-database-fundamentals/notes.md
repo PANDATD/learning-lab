@@ -108,3 +108,80 @@ Rows
 ↓
 
 Primary Key
+
+
+
+
+# SQLite Fundamentals
+
+## Mental Model
+
+Python Object
+↓
+RAM
+↓
+Lost when program exits
+
+-------------------------
+
+SQLite
+↓
+Database File (.db)
+↓
+Persistent Storage
+
+---
+
+## Definitions
+
+### SQLite
+
+A lightweight, serverless relational database that stores all data in a single `.db` file.
+
+### Database File
+
+A file that permanently stores tables, rows, indexes, and database metadata.
+
+### Persistent Storage
+
+Data remains available even after the program exits.
+
+---
+
+## Why SQLite?
+
+- Serverless
+- Zero configuration
+- Lightweight
+- Fast for development and learning
+- Uses standard SQL
+
+---
+
+## SQLite vs Python Objects
+
+| Python Object | SQLite |
+|--------------|---------|
+| Stored in RAM | Stored on Disk |
+| Lost on program exit | Persistent |
+| Temporary | Permanent |
+
+---
+
+## Engineering Rules
+
+- Use SQLite to learn relational databases.
+- One `.db` file can contain multiple tables.
+- Never assume what a database contains; inspect it.
+
+---
+
+## Summary
+
+Business Requirement
+↓
+Need Persistent Storage
+↓
+SQLite Database
+↓
+Database File (.db)

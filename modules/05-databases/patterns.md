@@ -37,3 +37,34 @@ Identity
 ↓
 
 Primary Key
+
+
+# Database Patterns
+
+## Pattern 1
+
+Python Object
+↓
+Temporary (RAM)
+
+SQLite
+↓
+Persistent (Disk)
+
+---
+
+## Pattern 2
+
+Business Requirement
+↓
+Need Persistence
+↓
+Database
+
+---
+
+## Pattern 3
+
+One Database File
+↓
+Multiple Tables
