@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 # Day 28 — SQLite Fundamentals
 
@@ -143,3 +144,11 @@ Implemented and tested:
 * Foreign-key enforcement
 * Basic transaction commit
 
+=======
+# SQL 
+
+--- 
+
+### definations 
+1. PRAGMA : `PRAGMA` is special command used to configure the database engine's behaviour, manage performance settings, or retrive internal metadata such as table info, using PRAGMA table_info(table_name)
+>>>>>>> 57d847b (created tables)
