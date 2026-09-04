@@ -32,13 +32,9 @@ connection.execute("PRAGMA foreign_keys = ON")
 # connection.commit()
 print("Employee Table Created.")
 
-department_schema = connection.execute(
-    "PRAGMA table_info(department)"
-).fetchall()
+department_schema = connection.execute("PRAGMA table_info(department)").fetchall()
 
-employee_schema = connection.execute(
-    "PRAGMA table_info(employee)"
-).fetchall()
+employee_schema = connection.execute("PRAGMA table_info(employee)").fetchall()
 
 print("Department Schema: ")
 print(department_schema)
@@ -46,9 +42,7 @@ print(department_schema)
 print("Employee Schema: ")
 print(employee_schema)
 
-foreign_keys = connection.execute(
-    "PRAGMA foreign_keys_list(employee)"
-).fetchall()
+foreign_keys = connection.execute("PRAGMA foreign_keys_list(employee)").fetchall()
 
 print("Employee foreign Keys.")
 print(foreign_keys)

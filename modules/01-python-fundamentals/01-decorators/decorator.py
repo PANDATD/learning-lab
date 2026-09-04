@@ -9,7 +9,7 @@
 # Works with any function signature using *args and **kwargs.
 # Preserves function metadata using functools.wraps.
 
-from .timer import timer
+from timing import timer
 
 
 @timer
