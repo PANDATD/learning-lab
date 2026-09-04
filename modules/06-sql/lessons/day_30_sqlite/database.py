@@ -1,9 +1,7 @@
 import sqlite3
 
-
 connection = sqlite3.connect("learning.db")
 connection.execute("PRAGMA foreign_keys = ON")
-
 
 # Update employee 104
 connection.execute(
@@ -17,7 +15,6 @@ connection.execute(
 
 connection.commit()
 
-
 # Verify update
 row = connection.execute(
     """
@@ -30,7 +27,6 @@ row = connection.execute(
 
 print("Updated employee:", row)
 
-
 # Try to update a non-existent employee
 cursor = connection.execute(
     """
@@ -42,7 +38,6 @@ cursor = connection.execute(
 )
 
 print("Updated rows:", cursor.rowcount)
-
 
 # Delete employee 106
 cursor = connection.execute(
@@ -57,7 +52,6 @@ print("Deleted rows:", cursor.rowcount)
 
 connection.commit()
 
-
 # Verify deletion
 row = connection.execute(
     """
@@ -69,6 +63,5 @@ row = connection.execute(
 ).fetchone()
 
 print("Deleted employee:", row)
-
 
 connection.close()
