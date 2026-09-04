@@ -7,8 +7,7 @@ def create_employee(
     employee_email: str,
     department_id: int,
     salary: int,
-):
-
+) -> None:
     conn = sqlite3.connect("../learning.db")
     # Connect Database
     try:
