@@ -1,6 +1,6 @@
 # Learning Lab
 
-> **A structured, practice-driven repository documenting my journey toward becoming a Python Backend Engineer.**
+> **A structured, practice-driven repository for learning Python backend engineering.**
 
 [![Python](https://img.shields.io/badge/Python-3.12-blue)](https://www.python.org/)
 [![uv](https://img.shields.io/badge/package%20manager-uv-orange)](https://docs.astral.sh/uv/)
@@ -11,32 +11,13 @@
 
 ---
 
-## Table of Contents
-
-- [About](#about)
-- [Repository Structure](#repository-structure)
-- [Learning Roadmap](#learning-roadmap)
-- [Progress](#progress)
-- [Current Focus](#current-focus)
-- [Recent Work](#recent-work)
-- [Exercises](#exercises)
-- [Tooling](#tooling)
-- [Quality Gates](#quality-gates)
-- [Development](#development)
-- [Learning Workflow](#learning-workflow)
-- [Learning Philosophy](#learning-philosophy)
-- [Long-Term Goal](#long-term-goal)
-- [License](#license)
-
----
-
 ## About
 
-`learning-lab` is my structured practice repository for becoming a Python Backend Engineer.
+`learning-lab` is a personal practice repository for building Python backend engineering skills through implementation, testing, documentation, and review.
 
-The repository is organized as progressive modules and focused lessons. The goal is to build backend engineering fundamentals through implementation, verification, documentation, and review rather than passive study alone.
+The repository has evolved from small Python exercises into a structured learning path covering Python, object-oriented programming, Pydantic, database fundamentals, SQL, and SQLite. Future work will build toward PostgreSQL, SQLAlchemy, Alembic, FastAPI, API design, integration testing, and backend architecture.
 
-The current learning path is moving from Python and Pydantic fundamentals into relational database concepts, SQL, SQLite, and eventually PostgreSQL, SQLAlchemy 2.0, Alembic, FastAPI, testing, and backend architecture.
+The repository is intentionally a **learning lab**, not a production application. Structure and abstractions are introduced when they help the current learning objective rather than for the sake of complexity.
 
 ---
 
@@ -46,36 +27,38 @@ The current learning path is moving from Python and Pydantic fundamentals into r
 learning-lab/
 │
 ├── .github/
-│   └── workflows/
+│   └── workflows/                  # CI and repository automation
 │
-├── modules/
+├── modules/                        # Structured learning material
 │   ├── 01-python-fundamentals/
 │   ├── 02-object-oriented-programming/
 │   ├── 04-pydantic/
 │   ├── 05-databases/
 │   └── 06-sql/
-│       ├── lessons/
-│       │   ├── 01-sqlite-cli/
-│       │   ├── 02-create-table/
-│       │   ├── day_28_sqlite/
-│       │   ├── day_29_sqlite/
-│       │   ├── day_30_sqlite/
-│       │   ├── day_31_sqlite/
-│       │   ├── day_32_sqlite/
-│       │   ├── day_33_sqlite/
-│       │   ├── day_34_sqlite/
-│       │   └── day_35_sqlite/
-│       ├── patterns.md
-│       └── progress.md
+│       ├── lessons/                # Focused SQL / SQLite lessons
+│       ├── patterns.md             # Reusable SQL patterns
+│       └── progress.md             # SQL learning progress
 │
-├── projects/
-├── Makefile
-├── pyproject.toml
-├── uv.lock
-└── README.md
+├── projects/                      # Work that combines multiple concepts
+│   └── 01-employee-management-system/
+│
+├── Makefile                       # Common development commands
+├── pyproject.toml                 # Project and tool configuration
+├── uv.lock                        # Locked dependencies
+└── README.md                      # Repository index
 ```
 
-The root README is the index. Detailed concepts, exercises, notes, and lesson-specific material live inside their respective module and lesson directories. The current SQL module follows the repository's actual lesson structure from the SQLite CLI and table creation work through Day 35. fileciteturn7file0
+### How to read the structure
+
+**`modules/`** answers: *What concept am I learning?*
+
+Each module contains focused lessons, exercises, and documentation related to a learning area.
+
+**`projects/`** answers: *What can I build by combining what I learned?*
+
+Projects are kept separate from individual lessons so that exercises remain focused while larger applications can combine multiple concepts.
+
+**Root configuration** contains repository-wide tooling rather than lesson-specific code.
 
 ---
 
@@ -83,7 +66,9 @@ The root README is the index. Detailed concepts, exercises, notes, and lesson-sp
 
 ### Phase 1 — Python + Pydantic
 
-- [x] Python Fundamentals
+**Status: Complete**
+
+- [x] Python fundamentals
 - [x] Functions and validation
 - [x] `*args` and `**kwargs`
 - [x] Decorators
@@ -94,7 +79,7 @@ The root README is the index. Detailed concepts, exercises, notes, and lesson-sp
 - [x] TypedDict
 - [x] Object-oriented programming
 - [x] Pydantic fundamentals
-- [x] Pydantic validators and field constraints
+- [x] Field constraints and validators
 - [x] `EmailStr`
 - [x] `field_validator`
 - [x] `model_validator`
@@ -107,11 +92,9 @@ The root README is the index. Detailed concepts, exercises, notes, and lesson-sp
 - [x] `model_dump()` and serialization
 - [x] Employee Management System capstone
 
-**Status: Complete**
-
 ### Phase 2 — Database Foundations
 
-#### SQLite / SQL
+**Current stage: SQLite / SQL**
 
 - [x] SQLite CLI fundamentals
 - [x] Table creation and schema constraints
@@ -135,7 +118,7 @@ The root README is the index. Detailed concepts, exercises, notes, and lesson-sp
 - [ ] Query analysis and `EXPLAIN`
 - [ ] Repository pattern and database access
 
-#### Next Database / Backend Modules
+### Upcoming
 
 - [ ] PostgreSQL
 - [ ] Views
@@ -154,189 +137,60 @@ The root README is the index. Detailed concepts, exercises, notes, and lesson-sp
 
 ## Progress
 
-| Day | Topic | Status |
-|---:|---|:---:|
-| 01 | Functions & Validation | ✅ |
-| 02 | `*args` & `**kwargs` | ✅ |
-| 03 | Decorators | ✅ |
-| 04 | Context Managers | ✅ |
-| 05 | `contextlib` | ✅ |
-| 06 | Type Hints | ✅ |
-| 07 | Dataclasses | ✅ |
-| 08 | Inventory Manager | ✅ |
-| 09 | Pytest Basics | ✅ |
-| 10 | TypedDict | ✅ |
-| 11 | OOP Fundamentals | ✅ |
-| 12 | Pydantic Basics | ✅ |
-| 13 | Advanced Pydantic Validation | ✅ |
-| 24 | `computed_field` & Decimal | ✅ |
-| 25 | Date & DateTime | ✅ |
-| 26 | `model_dump()` & Serialization | ✅ |
-| 27 | Pydantic Capstone / Phase 1 | ✅ |
-| 28 | SQLite Constraints & Schema | ✅ |
-| 29 | INSERT & SELECT | ✅ |
-| 30 | UPDATE & DELETE | ✅ |
-| 31 | Filtering & Sorting | ✅ |
-| 32 | SQL JOINs | ✅ |
-| 33 | Aggregation, `GROUP BY` & `HAVING` | ✅ |
-| 34 | Transactions | ✅ |
-| 35 | SQLite + Python Error Handling | ✅ |
+| Days | Area | Status |
+|---|---|---|
+| 01–10 | Python fundamentals, functions, decorators, context managers, typing, dataclasses, testing | Complete |
+| 11 | OOP fundamentals | Complete |
+| 12–13 | Pydantic fundamentals and validation | Complete |
+| 14–23 | Pydantic progression | Complete |
+| 24 | `computed_field` and Decimal | Complete |
+| 25 | Date and datetime | Complete |
+| 26 | `model_dump()` and serialization | Complete |
+| 27 | Employee Management System capstone / Phase 1 | Complete |
+| 28 | SQLite constraints and schema | Complete |
+| 29 | INSERT and SELECT | Complete |
+| 30 | UPDATE and DELETE | Complete |
+| 31 | Filtering and sorting | Complete |
+| 32 | SQL JOINs | Complete |
+| 33 | Aggregation, `GROUP BY`, and `HAVING` | Complete |
+| 34 | Transactions | Complete |
+| 35 | SQLite + Python error handling | Complete |
 
-The current repository state contains completed Day 28–35 SQLite lessons, including dedicated Day 33, Day 34, and Day 35 lesson directories. fileciteturn7file0 fileciteturn8file0
+The repository currently reaches **Day 35**, with the latest work focused on SQLite error handling and transaction rollback.
 
 ---
 
-## Current Focus
-
-**Current stage: Database Foundations — SQLite / SQL**
-
-The completed SQL sequence is currently:
+## Current SQL Progression
 
 ```text
-SQLite Schema & Constraints
-          ↓
+SQLite CLI
+    ↓
+Schema & Constraints
+    ↓
 INSERT / SELECT
-          ↓
+    ↓
 UPDATE / DELETE
-          ↓
+    ↓
 Filtering / Sorting
-          ↓
+    ↓
 JOINs
-          ↓
+    ↓
 Aggregation
-          ↓
+    ↓
 GROUP BY / HAVING
-          ↓
+    ↓
 Transactions
-          ↓
-Python SQLite Error Handling
+    ↓
+Python sqlite3 Error Handling
 ```
 
-Day 35 is the latest completed lesson. Its implementation covers `IntegrityError`, `OperationalError`, the broader `sqlite3.Error` hierarchy, rollback handling, and connection cleanup. fileciteturn1file1
-
----
-
-## Recent Work
-
-Recent commits on `main` show the progression of the SQL module:
-
-| Date | Commit | Work |
-|---|---|---|
-| 2026-09-04 | `feat(day35): add SQLite error handling and transaction rollback` | SQLite error handling and rollback |
-| 2026-09-03 | `feat:SQL Transactions` | SQL transactions |
-| 2026-09-03 | `feat: practice aggrigation` | SQL aggregation |
-| 2026-09-01 | `feat: practice sqlite joins` | SQL JOINs |
-| 2026-09-01 | `feat: practice sqlite filtering and sorting` | Filtering and sorting |
-| 2026-08-30 | `feat: practice sqlite insert and select` | INSERT and SELECT |
-| 2026-08-29 | `feat: practice sqlite constraints` | SQLite constraints |
-
-This reflects the actual recent `main` history rather than the older Pydantic-focused README. fileciteturn4file0
-
----
-
-## Exercises
-
-The repository contains practical exercises across the completed modules, including:
-
-- Python functions and validation
-- Decorators and context managers
-- Inventory and pricing exercises
-- OOP exercises
-- Pydantic validation and modeling
-- Employee Management System capstone
-- SQLite schema and constraints
-- INSERT / SELECT
-- UPDATE / DELETE
-- Filtering and sorting
-- JOINs
-- Aggregation and grouped queries
-- Transactions
-- Python SQLite exception handling
-
-The Day 35 lesson currently contains `combined_sql.py`, `sqlite_exceptions.py`, `oprational_error.py`, `README.md`, and `notes.md`. fileciteturn8file0
-
----
-
-## Tooling
-
-| Tool | Purpose |
-|---|---|
-| Python 3.12+ | Programming language |
-| uv | Environment and dependency management |
-| Ruff | Linting and formatting |
-| Black | Code formatting |
-| MyPy | Static type checking |
-| Pytest | Testing framework |
-| Pydantic | Runtime data validation |
-| Alembic | Database migrations |
-| Git | Version control |
-| pre-commit | Git hooks |
-
----
-
-## Quality Gates
-
-The repository uses automated quality checks before changes are considered complete.
-
-```bash
-uv run ruff check .
-uv run ruff format --check .
-uv run mypy .
-uv run pytest -v
-uv run pre-commit run --all-files
-```
-
----
-
-## Development
-
-Synchronize the environment:
-
-```bash
-uv sync
-```
-
-Run tests:
-
-```bash
-uv run pytest -v
-```
-
-Run Ruff:
-
-```bash
-uv run ruff check .
-```
-
-Check formatting:
-
-```bash
-uv run ruff format --check .
-```
-
-Run MyPy:
-
-```bash
-uv run mypy .
-```
-
-Run pre-commit hooks:
-
-```bash
-uv run pre-commit run --all-files
-```
-
-Apply supported Ruff fixes:
-
-```bash
-uv run ruff check . --fix
-```
+The progression is intentional: first understand how data is stored and queried, then move into query composition, grouped results, transaction boundaries, and database failure handling.
 
 ---
 
 ## Learning Workflow
 
-Each lesson follows a repeatable engineering workflow:
+Each learning task follows the same engineering cycle:
 
 ```text
 Understand
@@ -353,10 +207,106 @@ Quality Gates
     ↓
 Commit
     ↓
-Push
+Pull Request
+    ↓
+Merge
 ```
 
-The repository is maintained as incremental practice. Each lesson should build on concepts already learned rather than introducing unrelated complexity.
+This means Git, testing, documentation, and review are part of the learning process—not separate activities added later.
+
+---
+
+## Git & Pull Request Practice
+
+The repository uses small branches, focused commits, and pull requests to practice a realistic development workflow.
+
+### Preferred branch flow
+
+```text
+main
+  ↑
+feature / fix / docs branch
+  ↑
+focused changes
+```
+
+Pull requests should normally use `main` as the base branch and a focused feature or fix branch as the head branch.
+
+### Commit principles
+
+Commits should explain the change clearly and remain reasonably focused.
+
+Preferred style:
+
+```text
+feat(sql): add transaction practice
+feat(sql): add SQLite error handling
+fix(sql): correct rollback handling
+test(sql): verify transaction rollback
+docs(sql): document transaction behavior
+refactor(repo): reorganize learning modules
+```
+
+Avoid vague commit messages such as:
+
+```text
+1
+day12
+update
+changes
+```
+
+The goal is not perfect Git history. The goal is to make the repository history understandable enough to show how the work evolved.
+
+---
+
+## Testing & Quality
+
+Testing is introduced according to the behavior being learned. The repository should not create tests merely to increase test count.
+
+The project uses:
+
+| Tool | Purpose |
+|---|---|
+| Python 3.12+ | Programming language |
+| uv | Environment and dependency management |
+| Ruff | Linting and formatting |
+| MyPy | Static type checking |
+| Pytest | Testing |
+| Pydantic | Runtime validation and data modeling |
+| Git | Version control |
+| pre-commit | Local quality hooks |
+
+As the project reaches database and API work, testing will expand toward database integration tests and PostgreSQL/Testcontainers where they provide real value.
+
+### Quality checks
+
+```bash
+uv run ruff check .
+uv run ruff format --check .
+uv run mypy .
+uv run pytest -v
+uv run pre-commit run --all-files
+```
+
+---
+
+## Documentation
+
+Documentation lives close to the work it explains.
+
+Depending on the lesson, this may include:
+
+```text
+README.md
+notes.md
+mental_model.md
+problem_statement.md
+query-building-pattern.md
+patterns.md
+```
+
+Not every lesson needs every document. Documentation should exist when it improves understanding, review, or future reference.
 
 ---
 
@@ -364,15 +314,11 @@ The repository is maintained as incremental practice. Each lesson should build o
 
 ### Practice over passive consumption
 
-Concepts are learned by implementing them, observing their behavior, and documenting the result.
-
-### YAGNI
-
-Only introduce an abstraction when the current problem requires it. Premature repository layers, service layers, interfaces, or framework abstractions are intentionally avoided during foundational exercises.
+A concept is not considered learned only because it was read. It should be implemented, observed, verified, and documented.
 
 ### Progressive composition
 
-Previously learned concepts are reused in later work:
+Later work should reuse earlier concepts where appropriate:
 
 ```text
 Python
@@ -385,22 +331,28 @@ SQLite + Python
   ↓
 PostgreSQL
   ↓
-SQLAlchemy 2.0
+SQLAlchemy
   ↓
 FastAPI
   ↓
-Production Backend Architecture
+Production Backend Engineering
 ```
 
-### Documentation is part of the work
+### YAGNI
 
-Notes, README files, mental models, and query-building patterns are maintained alongside implementation rather than after the fact. The SQL module already contains module-level patterns and progress documentation as part of this structure. fileciteturn6file0
+Do not introduce abstractions before the problem requires them.
+
+Repository layers, service layers, interfaces, dependency injection, and clean-architecture boundaries should be introduced when they solve an actual problem in the current project—not simply because they are common backend patterns.
+
+### Repository stability
+
+Large structural changes should be made only when the current structure prevents useful work. Once a structure is good enough, the priority is learning and building rather than continuously reorganizing folders.
 
 ---
 
 ## Long-Term Goal
 
-Build production-oriented backend applications using:
+Build production-oriented backend systems with:
 
 - Python
 - FastAPI
@@ -410,11 +362,20 @@ Build production-oriented backend applications using:
 - Pytest
 - Testcontainers
 - REST APIs
+- Authentication
 - Dependency Injection
 - Clean Architecture
 - Microservices
 
-The goal is to become capable of designing, implementing, testing, debugging, documenting, and maintaining backend systems—not merely producing code that works once.
+The goal is to become capable of designing, implementing, testing, debugging, documenting, and maintaining backend systems—not simply producing code that works once.
+
+---
+
+## Repository Status
+
+**Current milestone: Day 35 — SQLite + Python Error Handling**
+
+The repository is currently in the database foundations stage. The immediate priority is to complete the remaining database concepts before moving into PostgreSQL and SQLAlchemy.
 
 ---
 
