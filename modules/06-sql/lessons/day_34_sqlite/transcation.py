@@ -1,6 +1,6 @@
 import sqlite3
 
-conn = sqlite3.connect("../learning.db")  # Connect Database.
+conn = sqlite3.connect("learning.db")  # Connect Database.
 try:
     # INSERT and UPDATE are part of the same transaction.
     conn.execute("""BEGIN TRANSACTION""")
@@ -26,7 +26,7 @@ try:
     )
     conn.commit()  # Commit Changes to database
 
-except Exception as e:
+except sqlite3.IntegrityError as e:
     conn.rollback()  # Rollback Transaction if any Failuer in database.
     print(f"Exception: {e}")
 
