@@ -1,14 +1,15 @@
 from collections.abc import Callable
 from functools import wraps
 from time import perf_counter
-from typing import Any, cast, ParamSpec, TypeVar
+from typing import ParamSpec, TypeVar, cast
 
 P = ParamSpec("P")
 R = TypeVar("R")
 
 
-def timer(func: Callable[P, R]) -> Callable[P, R]:
+def timer[**P, R](func: Callable[P, R]) -> Callable[P, R]:
     """Measure and print a function's execution time."""
+
     @wraps(func)
     def wrapper(*args: P.args, **kwargs: P.kwargs) -> R:
         start = perf_counter()
