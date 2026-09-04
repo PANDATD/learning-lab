@@ -1,9 +1,7 @@
 import sqlite3
 
-
 connection = sqlite3.connect("learning.db")
 connection.execute("PRAGMA foreign_keys = ON")
-
 
 # connection.executemany(
 #     """
@@ -19,7 +17,6 @@ connection.execute("PRAGMA foreign_keys = ON")
 #         (4, "Technical"),
 #     ],
 # )
-#
 #
 # connection.executemany(
 #     """
@@ -39,25 +36,21 @@ connection.execute("PRAGMA foreign_keys = ON")
 #     ],
 # )
 #
-#
 # connection.commit()
 
 employee = connection.execute(
     """
-        SELECT * 
-        FROM employee
-        WHERE employee_id = ?
-        """,
+    SELECT *
+    FROM employee
+    WHERE employee_id = ?
+    """,
     (999,),
 ).fetchall()
 
 print(employee)
 
-
 # departments = connection.execute("SELECT * FROM department").fetchall()
-#
 # employees = connection.execute("SELECT * FROM employee").fetchall()
-#
 # print("Departments:", departments)
 # print("Employees:", employees)
 
