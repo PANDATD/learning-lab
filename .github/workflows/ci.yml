@@ -1,4 +1,4 @@
-name: Continuous Integration
+name: CI
 
 on:
   push:
@@ -18,13 +18,12 @@ permissions:
   contents: read
 
 jobs:
-  quality-checks:
-    name: Ruff • Pytest
-
+  test:
+    name: Ruff + Pytest
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Install uv
@@ -41,5 +40,5 @@ jobs:
       - name: Run Ruff
         run: uv run ruff check .
 
-      - name: Run Pytest
+      - name: Run tests
         run: uv run pytest -v
